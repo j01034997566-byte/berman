@@ -103,6 +103,22 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   .service-intro .intro-visual{width:min(560px,100%);margin:0 auto}
   .service-intro .intro-visual img{max-height:none}
 }
+
+/* 서비스별 소개: 설명은 한 번만, 관련 장면을 함께 표시 */
+.service-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);padding:120px max(32px,calc((100vw - 1360px)/2)) 80px;box-sizing:border-box;min-height:100svh;background:var(--pt)}
+.service-feature .box{width:auto;margin:0;min-width:0}
+.service-feature .name{font-size:clamp(52px,5.5vw,88px)}
+.service-feature .big{font-size:clamp(28px,3vw,44px);margin-bottom:0;word-break:keep-all;overflow-wrap:break-word}
+.service-feature .service-visual{margin:0;min-width:0}
+.service-feature .service-visual img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:24px;box-shadow:0 20px 60px rgba(15,8,80,.24)}
+@media(max-width:860px){
+  .service-feature{grid-template-columns:minmax(0,1fr);gap:32px;padding:100px 20px 60px}
+  .service-feature .box{width:100%}
+  .service-feature .name{font-size:48px;gap:14px}
+  .service-feature .big{font-size:30px}
+  .service-feature .service-visual{width:min(640px,100%);margin:0 auto}
+  .service-feature .service-visual img{border-radius:18px}
+}
 </style>
 <!-- GA4 (Day 34에 여기에 붙이기) -->
 <!-- Meta Pixel (Day 35에 여기에 붙이기) -->
@@ -133,29 +149,26 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   <figure class="intro-visual"><img src="assets/meeting-smiles.webp" alt="파란 스웨터를 입은 남성과 파란 카디건을 입은 여성이 서로 눈을 맞추며 환하게 웃는 모습" width="1368" height="1149" loading="lazy" decoding="async"></figure>
 </section>
 
-<section class="scr svc">
+<section class="scr svc service-feature" id="taxi">
   <div class="box">
     <h2 class="name disp"><span class="emo">🚕</span>택시</h2>
-    <p class="big disp">심야·통학 길</p>
-    <p>심야·통학 길, 같은 방향 사람과 택시비를 나눕니다.</p>
+    <p class="big disp">심야·통학·장거리 등 같은 방향 사람과 택시비를 나눕니다.</p>
   </div>
-  <div class="doodle"><div class="ph "><span><span class="todo">택시 낙서 일러스트</span></span></div></div>
+  <figure class="service-visual"><img src="assets/taxi-share.webp" alt="같은 택시 뒷좌석에 안전벨트를 매고 앉아 스마트폰으로 비용 나누기를 확인하는 두 사람" width="1448" height="1086" loading="lazy" decoding="async"></figure>
 </section>
-<section class="scr svc">
+<section class="scr svc service-feature" id="meal">
   <div class="box">
     <h2 class="name disp"><span class="emo">🍲</span>식사</h2>
     <p class="big disp">혼자 시키기엔 많은 메뉴를 함께 나눠 먹습니다.</p>
-    <p>혼자 시키기엔 많은 메뉴를 함께 나눠 먹습니다.</p>
   </div>
-  <div class="doodle"><div class="ph "><span><span class="todo">식사 낙서 일러스트</span></span></div></div>
+  <figure class="service-visual"><img src="assets/meal-share.webp" alt="식당에서 푸짐한 치킨과 전골을 각자 그릇에 나누어 담으며 함께 식사하는 두 사람" width="1448" height="1086" loading="lazy" decoding="async"></figure>
 </section>
-<section class="scr svc">
+<section class="scr svc service-feature" id="leisure">
   <div class="box">
     <h2 class="name disp"><span class="emo">🎬</span>영화·여행</h2>
     <p class="big disp">같이 즐길 사람을 찾고 비용은 깔끔하게 나눕니다.</p>
-    <p>같이 즐길 사람을 찾고 비용은 깔끔하게 나눕니다.</p>
   </div>
-  <div class="doodle"><div class="ph "><span><span class="todo">영화·여행 낙서 일러스트</span></span></div></div>
+  <figure class="service-visual"><img src="assets/movie-together.webp" alt="영화관에서 팝콘과 영화표를 들고 나란히 앉아 영화를 즐기는 두 사람" width="1448" height="1086" loading="lazy" decoding="async"></figure>
 </section>
 
 <section class="scr svc" id="how">
