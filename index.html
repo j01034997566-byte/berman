@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://j01034997566-byte.github.io/berman/">
 <link rel="canonical" href="https://j01034997566-byte.github.io/berman/">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"><link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"><link rel="stylesheet" href="base.css">
 <style>
 :root{--pt:#473BF0;--ink:#000500;--on:#fff}
 html{scroll-snap-type:y proximity}
@@ -148,6 +148,37 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .how-screens figcaption{font-size:16px}
 .how-screens img{border-width:6px}
 }
+
+/* 브랜드 로고, 읽기 쉬운 메뉴, 일관된 신청 폼 */
+.hd{top:12px;padding:12px 32px;align-items:center}
+.hd .logo{display:block;width:112px;flex-shrink:0;text-shadow:none}
+.hd .logo img{display:block;width:100%;height:auto;filter:drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff) drop-shadow(0 2px 5px rgba(0,0,0,.18))}
+.hd nav{display:flex;gap:8px;align-items:center}
+.hd nav a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 16px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(10,8,38,.28);color:#fff;text-decoration:none;line-height:1.2;transition:background .18s,border-color .18s}
+.hd nav a:first-child{border:1px solid rgba(255,255,255,.65)}
+.hd nav a:hover{background:rgba(10,8,38,.5);border-color:#fff}
+.hd a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.apply form{width:100%;min-width:0;display:grid;gap:20px;padding:clamp(22px,3vw,32px);border-radius:24px;box-shadow:0 16px 48px rgba(22,12,96,.15)}
+.apply .field{display:grid;gap:8px;margin:0;min-width:0}
+.apply .field span{margin:0;font-size:14px;line-height:1.5;font-weight:700}
+.apply .field input,.apply .field select{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;height:54px;padding:0 14px;border:1.5px solid #d5d8e2;border-radius:12px;background:#fafbfe;color:#192038;font:inherit;font-size:15px;line-height:1.4}
+.apply .field input::placeholder{color:#8a91a1;opacity:1}
+.apply .field input:focus,.apply .field select:focus{outline:3px solid rgba(71,59,240,.16);border-color:#473bf0;background:#fff}
+.apply .safe-note{display:flex;align-items:flex-start;gap:10px;margin:0;padding:14px;border-radius:12px;background:#f1f0ff;color:#555b70;font-size:12px;line-height:1.7}
+.apply .safe-note>span{flex-shrink:0;line-height:1.7}
+.apply .safe-note>div{min-width:0}
+.apply .safe-note b{font-weight:700;color:#34384b}
+.apply .safe-note button{display:inline;padding:0;margin:0 0 0 3px;background:none;border:0;color:#473bf0;text-decoration:underline;text-underline-offset:3px;font:inherit;font-weight:700}
+.apply .submit{margin:0;width:100%;min-height:56px;padding:14px;border-radius:12px;font-size:16px;line-height:1.4}
+.apply .submit:focus-visible{outline:3px solid #473bf0;outline-offset:4px}
+@media(max-width:640px){
+.hd{top:0;padding:12px 16px;gap:14px;align-items:flex-start}
+.hd .logo{width:78px}
+.hd nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:250px}
+.hd nav a,.hd nav a:first-child{min-height:34px;padding:8px 10px;font-size:11px}
+.apply .box{width:calc(100% - 32px)}
+.apply form{gap:18px;padding:24px 20px}
+}
 </style>
 <!-- GA4 (Day 34에 여기에 붙이기) -->
 <!-- Meta Pixel (Day 35에 여기에 붙이기) -->
@@ -155,7 +186,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 <!-- Schema JSON-LD (Day 29) -->
 </head>
 <body>
-<header class="hd"><a class="logo disp" href="./">가치N빵</a><nav><a href="#apply" id="cta-top">출시 알림 ↗</a><a href="#how">어떻게 쓰나요? ↗</a><a href="#" data-privacy-open>개인정보 안내 ↗</a></nav></header>
+<header class="hd"><a class="logo" href="./" aria-label="가치N빵 홈"><img src="assets/brand-logo.png" alt="가치N빵" width="407" height="271" decoding="async"></a><nav><a href="#apply" id="cta-top">출시 알림 ↗</a><a href="#how">어떻게 쓰나요? ↗</a><a href="#" data-privacy-open>개인정보 안내 ↗</a></nav></header>
 <div class="pager" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
 
 <main>
@@ -243,6 +274,6 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
       <button type="button" class="ok" id="privacy-ok" disabled>확인했습니다</button>
     </div>
   </div>
-</div><script src="assets/privacy.js"></script>
+</div><script src="privacy.js"></script>
 </body>
 </html>
