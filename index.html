@@ -119,6 +119,35 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   .service-feature .service-visual{width:min(640px,100%);margin:0 auto}
   .service-feature .service-visual img{border-radius:18px}
 }
+
+/* 이용 방법: 세 단계와 대응하는 선명한 앱 화면 */
+.how-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.35fr);gap:clamp(32px,4vw,64px);padding:120px max(28px,calc((100vw - 1500px)/2)) 80px;box-sizing:border-box;min-height:100svh}
+.how-section>.box{width:auto;margin:0;min-width:0}
+.how-section .name{font-size:clamp(40px,4vw,68px);gap:14px;white-space:nowrap}
+.how-section .name .emo{width:64px;height:64px;font-size:36px;border-radius:18px;flex-shrink:0}
+.how-section .box>.big{font-size:30px!important}
+.how-screens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start;min-width:0}
+.how-screens figure{margin:0;min-width:0}
+.how-screens figcaption{font-size:clamp(12px,1.1vw,16px);font-weight:700;margin-bottom:14px;text-align:center;white-space:nowrap}
+.how-screens figcaption span{display:inline-block;color:#473bf0;background:white;border-radius:7px;padding:3px 6px;margin-right:4px}
+.how-screens img{display:block;width:100%;height:auto;border:5px solid rgba(255,255,255,.9);border-radius:24px;box-sizing:border-box;background:#f7f8fc;box-shadow:0 16px 44px rgba(20,12,96,.25)}
+.how-screens .screen-note{grid-column:1/-1;max-width:none;font-size:12px;text-align:center;margin:4px 0 0;opacity:.8}
+@media(max-width:1100px){
+.how-section{grid-template-columns:minmax(0,1fr);padding:110px 28px 60px}
+.how-section>.box{width:100%;max-width:780px}
+.how-screens{width:min(780px,100%);margin:0 auto;gap:20px}
+.how-section .name{white-space:normal}
+}
+@media(max-width:560px){
+.how-section{padding:100px 20px 60px;gap:36px}
+.how-section .name{font-size:36px}
+.how-section .name .emo{width:48px;height:48px;font-size:28px}
+.how-section .box>.big{font-size:28px!important}
+.how-screens{grid-template-columns:minmax(0,1fr);gap:28px}
+.how-screens figure{width:min(280px,100%);margin:0 auto}
+.how-screens figcaption{font-size:16px}
+.how-screens img{border-width:6px}
+}
 </style>
 <!-- GA4 (Day 34에 여기에 붙이기) -->
 <!-- Meta Pixel (Day 35에 여기에 붙이기) -->
@@ -171,12 +200,17 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   <figure class="service-visual"><img src="assets/movie-together.webp" alt="영화관에서 팝콘과 영화표를 들고 나란히 앉아 영화를 즐기는 두 사람" width="1448" height="1086" loading="lazy" decoding="async"></figure>
 </section>
 
-<section class="scr svc" id="how">
+<section class="scr svc how-section" id="how">
   <div class="box">
     <h2 class="name disp"><span class="emo">⚡</span>세 번 터치면 끝</h2>
 <p class="big disp" style="font-size:40px;margin:14px 0 4px">1. 목적 고르기</p><p>택시·식사·영화 중 필요한 순간을 고릅니다.</p><p class="big disp" style="font-size:40px;margin:14px 0 4px">2. 동행 수락</p><p>낯선 동행, 결정은 내가 해요. 조건을 보고 직접 고릅니다.</p><p class="big disp" style="font-size:40px;margin:14px 0 4px">3. 자동 정산</p><p>이용 후 앱에서 비용이 나눠집니다.</p>    <div class="faq"><div><b>노쇼가 생기면요?</b><span class="todo">노쇼 정책</span></div><div><b>정산은 어떻게 하나요?</b><span class="todo">분할결제 방식</span></div></div>
   </div>
-  <div class="doodle"><div class="ph "><span><span class="todo">상세페이지 시안 8장 중 앱 화면</span></span></div></div>
+  <div class="how-screens" aria-label="목적 선택, 동행 수락, 자동 정산의 앱 예시 화면">
+<figure><figcaption><span>01</span> 목적 고르기</figcaption><img src="assets/step-choose.svg" alt="택시, 식사, 영화·여행 중 목적을 선택하는 앱 예시 화면" width="360" height="720" loading="lazy"></figure>
+<figure><figcaption><span>02</span> 동행 수락</figcaption><img src="assets/step-accept.svg" alt="출발지와 도착지, 출발 시간과 인원을 확인한 후 동행을 수락하는 앱 예시 화면" width="360" height="720" loading="lazy"></figure>
+<figure><figcaption><span>03</span> 자동 정산</figcaption><img src="assets/step-settle.svg" alt="전체 이용 금액 18000원을 두 명이 9000원씩 나눈 정산 완료 예시 화면" width="360" height="720" loading="lazy"></figure>
+<p class="screen-note">서비스 이해를 돕기 위한 예시 화면입니다.</p>
+</div>
 </section>
 
 <section class="scr apply" id="apply">
