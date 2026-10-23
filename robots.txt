@@ -6,4 +6,4 @@ Disallow: /result.html
 # User-agent: GPTBot
 # Allow: /
 
-Sitemap: https://YOUR-GITHUB-ID.github.io/sitemap.xml
+Sitemap: https://j01034997566-byte.github.io/berman/sitemap.xml
