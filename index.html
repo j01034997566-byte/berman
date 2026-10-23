@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>가치N빵 | 혼자라서 포기했던 일상, 같이 가능하게</title>
+<meta name="description" content="택시·식사·영화·여행을 같은 목적의 사람과 함께 이용하고 비용을 나누는 공동소비 매칭 앱.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="가치N빵 | 혼자라서 포기했던 일상, 같이 가능하게">
+<meta property="og:description" content="택시·식사·영화·여행을 같은 목적의 사람과 함께 이용하고 비용을 나누는 공동소비 매칭 앱.">
+<meta property="og:image" content="https://YOUR-GITHUB-ID.github.io/assets/og.png">
+<meta property="og:url" content="https://YOUR-GITHUB-ID.github.io/">
+<link rel="canonical" href="https://YOUR-GITHUB-ID.github.io/">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"><link rel="stylesheet" href="assets/base.css">
+<style>
+:root{--pt:#473BF0;--ink:#000500;--on:#fff}
+html{scroll-snap-type:y proximity}
+body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var(--on);background:var(--pt);font-size:16px;line-height:1.6}
+.disp{font-family:"Black Han Sans","Pretendard Variable",sans-serif;font-weight:400;letter-spacing:-.01em;line-height:1.12}
+/* 헤더 */
+.hd{position:fixed;top:24px;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;pointer-events:none}
+.hd *{pointer-events:auto}
+.hd .logo{font-size:30px;color:var(--on);text-shadow:0 1px 6px rgba(0,0,0,.25)}
+.hd nav{display:flex;font-size:13px;font-weight:600}
+.hd nav a{padding:0 14px;border-left:1px solid rgba(255,255,255,.5)}.hd nav a:first-child{border:0}
+/* 한 화면 섹션 */
+.scr{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;overflow:hidden}
+.box{width:min(920px,100% - 48px);margin:0 auto;position:relative;z-index:2}
+/* 1화면: 사진 히어로 */
+.hero{background:#1a1a1a}
+.hero .bg{position:absolute;inset:0}
+.hero .bg .ph{background:#3a3a3a;color:#ccc}
+.hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,0) 70%)}
+.hero h1{font-size:92px;color:#9C95FF;margin:0}
+.hero .h2{font-size:44px;color:#fff;margin:26px 0 30px}
+.store{display:flex;gap:10px;align-items:center}
+.store a{display:flex;align-items:center;gap:8px;height:52px;padding:0 20px;background:#fff;color:var(--ink);border-radius:8px;font-weight:700;font-size:15px}
+.store .qr{width:52px;height:52px;border-radius:8px;background:#fff;display:grid;place-items:center;color:var(--ink);font-weight:800}
+.down{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-size:30px;z-index:2}
+/* 서비스 섹션 */
+.svc .name{font-size:96px;margin:0;display:flex;align-items:center;gap:18px}
+.svc .emo{width:96px;height:96px;border-radius:26px;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:52px}
+.svc .big{font-size:52px;margin:22px 0 22px;max-width:640px;word-break:keep-all}
+.svc p{max-width:520px;margin:0;font-size:17px;opacity:.92}
+.doodle{position:absolute;right:6%;bottom:8%;width:min(420px,40vw);height:300px;z-index:1}
+.doodle .ph{background:transparent;border:2px dashed rgba(255,255,255,.55);color:#fff;border-radius:20px}
+.pager{position:fixed;right:34px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:20}
+.pager i{display:block;width:3px;height:22px;background:rgba(255,255,255,.4);border-radius:2px}
+.pager i.on{background:#fff;height:38px}
+.faq{margin-top:30px;max-width:620px}
+.faq div{border-top:2px solid rgba(255,255,255,.4);padding:14px 0}
+.faq b{display:block;font-size:19px}
+/* 신청 */
+.apply .box{display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center}
+.apply form{background:#fff;color:var(--ink);border-radius:20px;padding:28px}
+.field{display:block;margin-bottom:12px}
+.field span{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.field input,.field select{width:100%;height:50px;border:2px solid var(--ink);border-radius:10px;padding:0 14px;font:inherit}
+.submit{width:100%;height:56px;border:0;border-radius:10px;background:var(--ink);color:#fff;font-size:17px;font-weight:700}
+.ft{background:var(--ink);color:#bbb;font-size:13px;padding:30px 48px}
+.ft a{color:#fff;margin-right:16px}
+@media (max-width:860px){
+  .hd{padding:12px 20px;top:20px}.hd nav{display:none}.hd .logo{font-size:24px}
+  .hero h1{font-size:50px}.hero .h2{font-size:26px}
+  .svc .name{font-size:52px}.svc .emo{width:60px;height:60px;font-size:32px;border-radius:16px}.svc .big{font-size:32px}
+  .doodle{position:relative;right:auto;bottom:auto;width:100%;height:180px;margin-top:24px}
+  .scr{flex-direction:column;justify-content:center;padding:100px 0 60px}.pager{display:none}
+  .apply .box{grid-template-columns:1fr;gap:24px}
+}
+</style>
+<!-- GA4 (Day 34에 여기에 붙이기) -->
+<!-- Meta Pixel (Day 35에 여기에 붙이기) -->
+<!-- Microsoft Clarity (Day 38에 여기에 붙이기) -->
+<!-- Schema JSON-LD (Day 29) -->
+</head>
+<body>
+<header class="hd"><a class="logo disp" href="./">가치N빵</a><nav><a href="#apply" id="cta-top">출시 알림 ↗</a><a href="#how">어떻게 쓰나요? ↗</a><a href="#" data-privacy-open>개인정보 안내 ↗</a></nav></header>
+<div class="pager" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<main>
+<section class="scr hero">
+  <div class="bg"><div class="ph "><span><span class="todo">막차 끊긴 밤, 택시 승강장 사진 (화면 꽉 차게)</span></span></div></div>
+  <div class="box">
+    <h1 class="disp">막차 놓쳤다고<br>택시비까지 혼자?</h1>
+    <p class="h2 disp">이제, 같이<br>나눠 타요</p>
+    <div class="store"><a href="#apply" id="cta-main"> 출시 알림 받기</a><a href="#how">▶ 어떻게 쓰나요?</a><span class="qr">QR</span></div>
+  </div>
+  <span class="down">∨</span>
+</section>
+
+<section class="scr svc">
+  <div class="box">
+    <h2 class="name disp">가치N빵</h2>
+    <p class="big disp">혼자라서 포기했던 일상, 같이 가능하게</p>
+    <p>혼자라서 포기했던 일상, 같이 가능하게. 같은 방향, 같은 목적의 사람과 택시·식사·영화를 함께하고 비용은 앱에서 나눠요.</p>
+  </div>
+  <div class="doodle"><div class="ph "><span><span class="todo">검은 선 낙서 일러스트: 택시·식탁·영화표</span></span></div></div>
+</section>
+
+<section class="scr svc">
+  <div class="box">
+    <h2 class="name disp"><span class="emo">🚕</span>택시</h2>
+    <p class="big disp">심야·통학 길</p>
+    <p>심야·통학 길, 같은 방향 사람과 택시비를 나눕니다.</p>
+  </div>
+  <div class="doodle"><div class="ph "><span><span class="todo">택시 낙서 일러스트</span></span></div></div>
+</section>
+<section class="scr svc">
+  <div class="box">
+    <h2 class="name disp"><span class="emo">🍲</span>식사</h2>
+    <p class="big disp">혼자 시키기엔 많은 메뉴를 함께 나눠 먹습니다.</p>
+    <p>혼자 시키기엔 많은 메뉴를 함께 나눠 먹습니다.</p>
+  </div>
+  <div class="doodle"><div class="ph "><span><span class="todo">식사 낙서 일러스트</span></span></div></div>
+</section>
+<section class="scr svc">
+  <div class="box">
+    <h2 class="name disp"><span class="emo">🎬</span>영화·여행</h2>
+    <p class="big disp">같이 즐길 사람을 찾고 비용은 깔끔하게 나눕니다.</p>
+    <p>같이 즐길 사람을 찾고 비용은 깔끔하게 나눕니다.</p>
+  </div>
+  <div class="doodle"><div class="ph "><span><span class="todo">영화·여행 낙서 일러스트</span></span></div></div>
+</section>
+
+<section class="scr svc" id="how">
+  <div class="box">
+    <h2 class="name disp"><span class="emo">⚡</span>세 번 터치면 끝</h2>
+<p class="big disp" style="font-size:40px;margin:14px 0 4px">1. 목적 고르기</p><p>택시·식사·영화 중 필요한 순간을 고릅니다.</p><p class="big disp" style="font-size:40px;margin:14px 0 4px">2. 동행 수락</p><p>낯선 동행, 결정은 내가 해요. 조건을 보고 직접 고릅니다.</p><p class="big disp" style="font-size:40px;margin:14px 0 4px">3. 자동 정산</p><p>이용 후 앱에서 비용이 나눠집니다.</p>    <div class="faq"><div><b>노쇼가 생기면요?</b><span class="todo">노쇼 정책</span></div><div><b>정산은 어떻게 하나요?</b><span class="todo">분할결제 방식</span></div></div>
+  </div>
+  <div class="doodle"><div class="ph "><span><span class="todo">상세페이지 시안 8장 중 앱 화면</span></span></div></div>
+</section>
+
+<section class="scr apply" id="apply">
+  <div class="box">
+    <div><h2 class="name disp" style="font-size:72px;margin:0">출시 알림 받기</h2><p class="big disp" style="font-size:36px">혼자서 포기하지 말고,<br>같이 해요.</p><p>앱이 출시되면 가장 먼저 알려 드립니다.</p></div>
+    <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
+      <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
+<label class="field"><span>연락처</span><input id="f-contact" type="tel" required pattern="[0-9\- ]{9,14}" placeholder="010-0000-0000"></label>
+<label class="field"><span>가장 먼저 쓰고 싶은 순간</span><select id="f-select" required><option value="">선택해 주세요</option><option>택시</option><option>식사</option><option>영화</option><option>여행</option></select></label>
+
+      <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
+      <button class="submit" type="submit" id="cta-submit">출시 알림 받기</button>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="ft"><a href="#apply">출시 알림 받기</a><a href="#" data-privacy-open>개인정보 처리 안내</a><p>이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않으며, 표기된 수치·후기는 예시입니다.</p></footer>
+<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+  <div class="modal-box">
+    <span class="badge">개인정보 미수집 · 즉시 파기</span>
+    <h2 id="privacy-title">개인정보 처리 안내</h2>
+    <ol>
+      <li><strong>입력하신 정보는 절대 저장하지 않습니다.</strong> 서버, 데이터베이스, 스프레드시트, 이메일, 외부 서비스 어디로도 전송되지 않습니다.</li>
+      <li>입력값은 이 브라우저 화면에만 잠시 머물며, 완료 버튼을 누르는 <strong>즉시 화면에서 지워집니다.</strong> 쿠키나 브라우저 저장소에도 남기지 않습니다.</li>
+      <li>페이지 제작자와 강사를 포함한 <strong>누구도 입력값을 볼 수 없습니다.</strong></li>
+    </ol>
+    <label><input type="checkbox" id="privacy-agree"> 위 내용을 확인했으며, 입력값이 저장되지 않고 즉시 파기된다는 점에 동의합니다.</label>
+    <div class="modal-actions">
+      <button type="button" class="cancel" id="privacy-cancel">닫기</button>
+      <button type="button" class="ok" id="privacy-ok" disabled>확인했습니다</button>
+    </div>
+  </div>
+</div><script src="assets/privacy.js"></script>
+</body>
+</html>
