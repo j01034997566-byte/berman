@@ -87,6 +87,22 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   .hero .store a{font-size:13px;padding:0 12px;height:48px}
   .hero .store .qr{width:48px;height:48px}
 }
+
+/* 두 번째 화면: 함께하는 일상의 즐거움 */
+.service-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);padding:120px max(32px,calc((100vw - 1440px)/2)) 0;box-sizing:border-box;min-height:100svh;background:var(--pt)}
+.service-intro .box{width:auto;margin:0;padding-bottom:80px}
+.service-intro .name{font-size:clamp(60px,6vw,96px)}
+.service-intro .big{font-size:clamp(32px,3.1vw,52px)}
+.service-intro .intro-visual{margin:0;align-self:end;min-width:0}
+.service-intro .intro-visual img{display:block;width:100%;height:auto;max-height:78svh;object-fit:contain;object-position:center bottom}
+@media(max-width:860px){
+  .service-intro{grid-template-columns:minmax(0,1fr);gap:32px;padding:100px 20px 0}
+  .service-intro .box{width:100%;padding-bottom:0}
+  .service-intro .name{font-size:52px}
+  .service-intro .big{font-size:32px}
+  .service-intro .intro-visual{width:min(560px,100%);margin:0 auto}
+  .service-intro .intro-visual img{max-height:none}
+}
 </style>
 <!-- GA4 (Day 34에 여기에 붙이기) -->
 <!-- Meta Pixel (Day 35에 여기에 붙이기) -->
@@ -108,13 +124,13 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   <span class="down">∨</span>
 </section>
 
-<section class="scr svc">
+<section class="scr svc service-intro">
   <div class="box">
     <h2 class="name disp">가치N빵</h2>
     <p class="big disp">혼자라서 포기했던 일상, 같이 가능하게</p>
     <p>혼자라서 포기했던 일상, 같이 가능하게. 같은 방향, 같은 목적의 사람과 택시·식사·영화를 함께하고 비용은 앱에서 나눠요.</p>
   </div>
-  <div class="doodle"><div class="ph "><span><span class="todo">검은 선 낙서 일러스트: 택시·식탁·영화표</span></span></div></div>
+  <figure class="intro-visual"><img src="assets/meeting-smiles.webp" alt="파란 스웨터를 입은 남성과 파란 카디건을 입은 여성이 서로 눈을 맞추며 환하게 웃는 모습" width="1368" height="1149" loading="lazy" decoding="async"></figure>
 </section>
 
 <section class="scr svc">
