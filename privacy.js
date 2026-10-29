@@ -13,6 +13,10 @@
   var cancel = document.getElementById('privacy-cancel');
   var mode = 'info';
 
+  function track(name, params) {
+    if (typeof window.bermanTrack === 'function') window.bermanTrack(name, params);
+  }
+
   function wipe() {
     if (!form) return;
     form.querySelectorAll('input, select, textarea').forEach(function (el) {
@@ -22,7 +26,7 @@
     form.reset();
   }
 
-  function open(m) {
+  function open(m, elementId) {
     mode = m;
     agree.checked = false;
     ok.disabled = true;
@@ -30,6 +34,10 @@
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     agree.focus();
+    track('privacy_modal_open', {
+      section_id: m === 'submit' || elementId === 'form_privacy' ? 'apply' : elementId === 'header_privacy' ? 'header' : 'footer',
+      element_id: elementId, modal_mode: m, form_id: 'lead-form'
+    });
   }
 
   function close() {
@@ -52,14 +60,14 @@
   });
 
   document.querySelectorAll('[data-privacy-open]').forEach(function (b) {
-    b.addEventListener('click', function (e) { e.preventDefault(); open('info'); });
+    b.addEventListener('click', function (e) { e.preventDefault(); open('info', b.closest('header') ? 'header_privacy' : b.closest('footer') ? 'footer_privacy' : 'form_privacy'); });
   });
 
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      open('submit');
+      open('submit', 'cta-submit');
     });
   }
 
