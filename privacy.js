@@ -54,6 +54,7 @@
     if (mode !== 'submit') { close(); return; }
     wipe();
     // 분석 도구를 붙였다면 여기서 개인정보 없이 이벤트 이름만 보냅니다 (Day 34~35).
+    if (window.sendLeadLog) window.sendLeadLog();
     if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead');
     if (window.fbq) fbq('track', 'Lead');
     location.replace('result.html');
